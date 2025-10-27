@@ -1,8 +1,27 @@
 package edu.upb.lp.proyectoPrograII;
 
-import edu.upb.lp.progra.adapterFiles.AndroidLibrary;
+public class Caballo{
+    private String nombre;
+    private int posicion;
+    private int carril;
+    private boolean tieneHabilidad;
 
-public class ProyectoPrograII {
-    @Override
+    public abstract void usarHabilidad(){
 
+    }
+
+    public Caballo(String nombre, int posicion, int carril){
+        this.nombre = nombre;
+        this.posicion = posicion;
+        this.carril = carril;
+    }
+
+    public void avanzar(){
+
+    }
+
+    public void ganar(){
+
+    }
+}
 }

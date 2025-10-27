@@ -15,8 +15,10 @@ public class ProyectoPrograII {
     public ProyectoPrograII(AndroidLibrary lib) {
         this.lib = lib;
         for(int i=0;i<5;i++) caballos[i] = new Caballo("Caballo"+(i+1));
-        caballos[0].habilidad="Doble Avance"; caballos[1].habilidad="Retroceder Rival";
-        caballos[2].habilidad="Doble Avance"; caballos[3].habilidad="Retroceder Rival";
+        caballos[0].habilidad="Doble Avance"; 
+        caballos[1].habilidad="Retroceder Rival";
+        caballos[2].habilidad="Doble Avance"; 
+        caballos[3].habilidad="Retroceder Rival";
         caballos[4].cola = new LinkedList<>();
         dibujarTablero();
     }
@@ -26,20 +28,21 @@ public class ProyectoPrograII {
         int pos = 0;
         String habilidad;
         boolean usada=false;
-        Queue<String> cola; // solo para neutral
-
-        // CONSTRUCTOR
+        Queue<String> cola;
+        
         Caballo(String nombre) {
             this.nombre = nombre;
         }
 
-        void avanzar() { pos++; }
+        public void avanzar() { 
+            pos++; 
+        }
 
-        void usarHabilidad() {
+        public void usarHabilidad() {
             if(!usada && habilidad!=null){
                 lib.showTemporaryMessage(nombre+" usa "+habilidad);
                 usada=true;
-                if(cola!=null) cola.add(habilidad); // solo neutral
+                if(cola!=null) cola.add(habilidad);
             }
         }
     }

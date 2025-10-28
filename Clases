@@ -1,0 +1,79 @@
+package edu.upb.lp.progra.carreraDeCaballos;
+
+public class CarreraDeCaballosGame {
+    private CaballoUno caballoUno;
+    private CaballoDos caballoDos;
+
+    public CarreraDeCaballosGame(CaballoUno caballoUno, CaballoDos caballoDos){
+        this.caballoUno = caballoUno;
+        this.caballoDos = caballoDos;
+    }
+    public void borrarImagen(int v,int h){
+    }
+    public void dibujarImagen(int v,int h,String nombre){
+    }
+}
+------
+package edu.upb.lp.progra.carreraDeCaballos;
+
+public abstract class Caballo {
+    private String nombre;
+    private int posicion;
+    private int carril;
+    private boolean tieneHabilidad;
+
+    public Caballo(String nombre, int posicion, int carril) {
+        this.nombre = nombre;
+        this.posicion = posicion;
+        this.carril = carril;
+    }
+
+
+    public void avanzar() {
+        // borrar caballo de casilla
+        //game.borrarImagen
+        // dibujar casilla vacia donde estaba caballo
+        //game.dibujarImagen(casilla)
+        // borrar casilla donde estará el caballo
+        //game.borrarImagen
+        // dibujar el caballo en nueva posicion
+        //game.dibujarImagen(caballo)
+        posicion++;
+    }
+
+    public void ganar() {
+
+        //si la posicion es 7, declarar ganador al caballo
+        //game.declararGanador
+    }
+
+    public void usarPoder() {
+    }
+}
+-----
+package edu.upb.lp.progra.carreraDeCaballos;
+
+public class CaballoUno extends Caballo {
+
+    public CaballoUno(String nombre, int posicion, int carril) {
+        super(nombre, posicion, carril);
+    }
+    @Override
+    public void usarPoder(){
+        this.avanzar();
+    }
+}
+------
+package edu.upb.lp.progra.carreraDeCaballos;
+
+public class CaballoDos extends Caballo {
+    public CaballoDos(String nombre, int posicion, int carril) {
+        super(nombre, posicion, carril);
+    }
+
+    @Override
+    public void usarPoder() {
+        //obtener pieza del set sin avanzar un turno
+    }
+}
+

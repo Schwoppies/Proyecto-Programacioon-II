@@ -76,4 +76,30 @@ public class CaballoDos extends Caballo {
         //obtener pieza del set sin avanzar un turno
     }
 }
+-----
+public class CarreraDeCaballosConnector implements AppConnector {
+    private AndroidLibrary lib;
+    private CarreraDeCaballosGame game;
+    private int[] posicionesCaballos;
+
+    public CarreraDeCaballosConnector(AndroidLibrary lib) {
+        this.lib = lib;
+    }
+
+    @Override
+    public void onButtonPressed(String name) {
+    }
+
+    @Override
+    public void onCellPressed(int v, int h) {
+    }
+
+    @Override
+    public void initialiseInterface() {
+        lib.configureScreen(9, 7, 2, 2, false, 0);
+        dibujarPista();
+        dibujarCaballos();
+        dibujarBoton();
+
+
 
